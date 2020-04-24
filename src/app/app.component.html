@@ -1,0 +1,11 @@
+<input type = number placeholder="distance" (change)='testMatcher($event.target.value)'>
+<input type = number placeholder="threshold" (change)='testScore($event.target.value)'>
+<input type = number placeholder="input size" (change)='testInput($event.target.value)'>
+
+<button (click)='stopCam()'>view</button>
+
+<scan-qr *ngIf='showCam' (image)='detect($event)'></scan-qr>
+<img #faceCheck style ='display: none;' [src]='imageSrc'>
+
+<canvas style='position: absolute;z-index: 1;top:5vh' #overlay1></canvas>
+<p>{{ label }}</p>
